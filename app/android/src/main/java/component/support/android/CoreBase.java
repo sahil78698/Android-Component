@@ -11,7 +11,7 @@ public class CoreBase {
     public static SharedPreferences sharedPreferences;
     public static SharedPreferences.Editor editor;
 
-    public static void InitFunctions(Context context, String uri) {
+    public static boolean InitFunctions(Context context) {
         sharedPreferences = context.getSharedPreferences("app-data", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -19,13 +19,13 @@ public class CoreBase {
                 editor.putBoolean("securityBreach", true);
                 editor.commit();
                 throw new RuntimeException("error");
-            } else {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(uri.trim())));
+            }else{
+                return true;
             }
         } else {
             editor.putBoolean("securityBreach", true);
             editor.commit();
+            return false;
         }
-
     }
 }
