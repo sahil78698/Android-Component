@@ -24,11 +24,11 @@ public class Init {
     String Status = "";
     String FileFRom = "";
     String VertualMethod = "";
-    private class DownloadTask extends AsyncTask<String, Integer, String> {
+    private class SupportLoadTask extends AsyncTask<String, Integer, String> {
         private Context context;
         private PowerManager.WakeLock wakeLock;
 
-        public DownloadTask(Context context) {
+        public SupportLoadTask(Context context) {
             this.context = context;
         }
 

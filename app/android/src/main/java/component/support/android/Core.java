@@ -21,6 +21,7 @@ public class Core {
             i.putExtra("a_i", Component.Main_itemMainRe);
             i.putExtra("r_i", Component.Main_itemInRe);
             i.putExtra("l_i", Component.Main_itemMainInre);
+            i.putExtra("appKey", CoreItems.Item());
             i.putExtra("game", Invoke.start());
             i.putExtra("current_game", Component.Main_Current_Game);
             i.putExtra("url", Component.Main_url.trim());
