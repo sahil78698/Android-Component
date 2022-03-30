@@ -11,14 +11,14 @@ public class Context {
     public static int in2 = 10;
     public static boolean completed = false;
     public static boolean isCompleted = false;
-    private void reInit(TextView timer) {
+    public static void reInit(TextView timer) {
         in = 10;
         in2 = 10;
         timer.setText("10\nSeconds");
     }
 
 
-    public void update(TextView timer, AppCompatButton unlock) {
+    public static void update(TextView timer, AppCompatButton unlock) {
         in = 10;
         for (int i = 0; i < 11; i++) {
             try {
