@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatButton;
 
 
 public class Context {
-    public static int in = 10;
-    public static int in2 = 10;
+    public static int in = 11;
+    public static int in2 = 11;
     public static boolean completed = false;
     public static boolean isCompleted = false;
     public static AppCompatButton download;
@@ -19,8 +19,8 @@ public class Context {
     public static void reInit(TextView timer) {
         completed = false;
         isCompleted = false;
-        in = 10;
-        in2 = 10;
+        in = 11;
+        in2 = 11;
     }
 
     public static void Init(TextView mTimer, AppCompatButton mUnlock, AppCompatButton mDownload) {
@@ -31,7 +31,7 @@ public class Context {
     }
 
     public static void update() {
-        in = 10;
+        in = 11;
         UpdateMainData updateMainData = new UpdateMainData();
         updateMainData.execute();
     }
@@ -45,7 +45,7 @@ public class Context {
         @Override
         protected void onPreExecute() {
             timer.setText("10\nSeconds");
-            in = 10;
+            in = 11;
         }
 
         @Override
@@ -80,7 +80,7 @@ public class Context {
         @Override
         protected void onPreExecute() {
             timer.setText("10\nSeconds");
-            in2 = 10;
+            in2 = 11;
             download.setText(in2 + " Seconds");
         }
 
@@ -100,7 +100,7 @@ public class Context {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
-            timer.setText(in + "\nSeconds");
+            timer.setText(in2 + "\nSeconds");
             download.setText(in2 + " Seconds");
         }
 
