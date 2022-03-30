@@ -2,6 +2,7 @@ package component.support.android;
 
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.AppCompatButton;
@@ -15,6 +16,7 @@ public class Context {
     public static AppCompatButton download;
     public static AppCompatButton unlock;
     public static TextView timer;
+    public static ScrollView scrollView;
 
     public static void reInit(TextView timer) {
         completed = false;
@@ -23,10 +25,11 @@ public class Context {
         in2 = 11;
     }
 
-    public static void Init(TextView mTimer, AppCompatButton mUnlock, AppCompatButton mDownload) {
+    public static void Init(TextView mTimer, AppCompatButton mUnlock, AppCompatButton mDownload, ScrollView mScrollView) {
         download = (AppCompatButton) mDownload;
         unlock = (AppCompatButton) mUnlock;
         timer = (TextView) mTimer;
+        scrollView = (ScrollView) mScrollView;
 
     }
 
@@ -71,6 +74,8 @@ public class Context {
         protected void onPostExecute(String s) {
             unlock.setVisibility(View.VISIBLE);
             unlock.setEnabled(true);
+            scrollView.fullScroll(View.FOCUS_UP);
+            scrollView.smoothScrollTo(0, 0);
             isCompleted = true;
         }
     }
